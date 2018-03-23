@@ -72,9 +72,9 @@ I just started learning this. There's probably a better way to do this. I've als
 
 However, it's THE only doc on the internet that specifically/simply shows you how to set this up within Unity, so it's better than nothing and hopefully a starting point for you!
 
-## Buy me a beer :)
+## This Forking Changed My Life
 
-Found this overwhelmingly useful? Although I can't bear your children, you can check out our (Imperium42 Game Studio) live game, **Throne of Lies: The Online Game of Deceit** @ http://store.steampowered.com/app/595280
+Found this overwhelmingly useful? Although I can't bear your children, you can allow me to shamelessly self-promote our (Imperium42 Game Studio) live game, **Throne of Lies: The Online Game of Deceit** -- check it out @ http://store.steampowered.com/app/595280
 
 ## Questions?
 
