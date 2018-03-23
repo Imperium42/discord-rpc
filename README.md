@@ -8,7 +8,7 @@ This is a library for interfacing your game with a locally running Discord deskt
 
 * It works **out of the box** in a standard Unity hierarchy. **Quickstart** guide below. 
 
-* This branch is **WIP** (This is my ~2nd day learning this).
+* This branch is **WIP** (This is my ~2nd day learning this). This is meant to get you started - not to be super maintained.
 
 ## About This Fork (Detailed)
 
@@ -68,7 +68,7 @@ This is a sample [Unity](https://unity3d.com/) project that wraps a DLL version 
 
 ## Disclaimer
 
-I just started learning this. There's probably a better way to do this. I've also only confirmed this working on Windows. Linux+Ubuntu are WIP to test when compiled.
+I just started learning this. There's probably a better way to do this. I've also only confirmed this working on Windows. Linux+Ubuntu are WIP to test when compiled. I most likely will not maintain this repo - it's to get you started.
 
 However, it's THE only doc on the internet that specifically/simply shows you how to set this up within Unity, so it's better than nothing and hopefully a starting point for you!
 
