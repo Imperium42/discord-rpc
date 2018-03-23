@@ -28,9 +28,9 @@ In the original documentation, it wants us to build from source, install Python,
 
 1. **Clone** this project. The bloat from the original project has already been removed.
  
-2 (a.) **Copy** `/SomeUnityProject/Assets/*` to `<YourUnityProject>/Assets/`
+2. (a) **Copy** `/SomeUnityProject/Assets/*` to `<YourUnityProject>/Assets/`
 
-2 (b.) **OR** You can open the `SomeUnityProject` directly within Unity to jump straight to the example project/scene
+2. (b) **OR** You can open the `SomeUnityProject` directly within Unity to jump straight to the example project/scene
 
 3. Open the example scene @ `/Assets/Discord/Example Scene/DiscordExampleScene`.
 
