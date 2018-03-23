@@ -2,7 +2,7 @@
 
 This is a library for interfacing your game with a locally running Discord desktop client. It's known to work on Windows, macOS, and Linux. 
 
-![Preview](https://i.imgur.com/M9Be2wQ.png)
+![Preview](https://cdn.discordapp.com/attachments/262809788696494080/426409016713805825/unknown.png)
 
 ## About This Fork (TL;DR)
 
