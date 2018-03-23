@@ -16,7 +16,7 @@ In the original documentation, it wants us to build from source, install Python,
 
 * All bloat and source stuff that we Windows simple folk would never look at has all been removed for simplicity.
 
-* The architecture was designed to be intuitive to place into a REAL Unity project with better placmeent.
+* The architecture was redesigned to be intuitive to place into a REAL Unity project with better placement.
 
 * The DLL file is already provided for you and placed correctly. Don't even worry about it unless you error out.
 
