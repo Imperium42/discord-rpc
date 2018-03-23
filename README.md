@@ -2,6 +2,8 @@
 
 This is a library for interfacing your game with a locally running Discord desktop client. It's known to work on Windows, macOS, and Linux. 
 
+![Preview](https://i.imgur.com/M9Be2wQ.png)
+
 ## About This Fork (TL;DR)
 
 * It works **out of the box** in a standard Unity hierarchy. **Quickstart** guide below.
@@ -35,6 +37,12 @@ In the original documentation, it wants us to build from source, install Python,
 4. Click on `DiscordCtrl` in the hierarchy and paste your SteamId (if you have one; optionally). You can use this sample Discord app id `333435323239383930393830393337373339` (should already be prefilled). Remember to put your own later.
 
 5. Click PLAY and notice your logs. Click the button and notice the click count goes up. Look at your Discord profile! It's there! You did it~
+
+![Step 1](https://i.imgur.com/W6JWNMP.png)
+
+![Step 2](https://i.imgur.com/hgcichs.png)
+
+![Step 3](https://i.imgur.com/LgmolX7.png)
 
 ## Now What? Tips!
 
