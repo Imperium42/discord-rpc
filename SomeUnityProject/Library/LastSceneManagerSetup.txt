@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Discord/Example Scene/DiscordExampleScene.unity
+  isLoaded: 1
+  isActive: 1

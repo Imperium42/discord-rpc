@@ -1,83 +1,75 @@
 # Discord RPC
 
-This is a library for interfacing your game with a locally running Discord desktop client. It's known to work on Windows, macOS, and Linux. You can use the lib directly if you like, or use it as a guide to writing your own if it doesn't suit your game as is. PRs/feedback welcome if you have an improvement everyone might want, or can describe how this doesn't meet your needs.
+This is a library for interfacing your game with a locally running Discord desktop client. It's known to work on Windows, macOS, and Linux. 
 
-Included here are some quick demos that implement the very minimal subset to show current status, and
-have callbacks for where a more complete game would do more things (joining, spectating, etc).
+## About This Fork (TL;DR)
 
-## Documentation
+* It works **out of the box** in a standard Unity hierarchy. **Quickstart** guide below.
 
-The most up to date documentation for Rich Presence can always be found on our [developer site](https://discordapp.com/developers/docs/rich-presence/how-to)! If you're interested in rolling your own native implementation of Rich Presence via IPC sockets instead of using our SDK—hey, you've got free time, right?—check out the ["Hard Mode" documentation](https://github.com/discordapp/discord-rpc/blob/master/documentation/hard-mode.md).
+## About This Fork (Detailed)
 
-## Basic Usage
+In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, run some CLI, and place the files in an odd manner -- but we’re going to skip all those shenannigans.
 
-Zeroith, you should be set up to build things because you are a game developer, right?
+* This version is simplified from the original, aiming for Unity (specifically on Windows, although it should also be a headstart on Mac, too). 
 
-First, head on over to the [Discord developers site](https://discordapp.com/developers/applications/me) and make yourself an app. Keep track of `Client ID` -- you'll need it here to pass to the init function.
+* All bloat and source stuff that we Windows simple folk would never look at has all been removed for simplicity.
 
-### From package
+* The architecture was designed to be intuitive to place into a REAL Unity project with better placmeent.
 
-Download a release package for your platform(s) -- they have subdirs with various prebuilt options, select the one you need add `/include` to your compile includes, `/lib` to your linker paths, and link with `discord-rpc`. For the dynamically linked builds, you'll need to ship the associated file along with your game.
+* The DLL file is already provided for you and placed correctly. Don't even worry about it unless you error out.
 
-### From repo
+* BuildHelper is modified to be less annoying for paths. **Mac/Linux is WIP!** I could use help :)
 
-There's a [CMake](https://cmake.org/download/) file that should be able to generate the lib for you; Sometimes I use it like this:
-```sh
-    cd <path to discord-rpc>
-    mkdir build
-    cd build
-    cmake .. -DCMAKE_INSTALL_PREFIX=<path to install discord-rpc to>
-    cmake --build . --config Release --target install
-```
-There is a wrapper build script `build.py` that runs `cmake` with a few different options.
+* IT JUST WORKS!
 
-Usually, I run `build.py` to get things started, then use the generated project files as I work on things. It does depend on `click` library, so do a quick `pip install click` to make sure you have it if you want to run `build.py`.
+## Quickstart
 
-There are some CMake options you might care about:
+1. **Clone** this project. The bloat from the original project has already been removed.
+ 
+2a. **Copy** `/SomeUnityProject/Assets/*` to `<YourUnityProject>/Assets/`
 
-| flag | default | does |
-|------|---------|------|
-| `ENABLE_IO_THREAD` | `ON` | When enabled, we start up a thread to do io processing, if disabled you should call `Discord_UpdateConnection` yourself.
-| `USE_STATIC_CRT` | `OFF` | (Windows) Enable to statically link the CRT, avoiding requiring users install the redistributable package. (The prebuilt binaries enable this option)
-| [`BUILD_SHARED_LIBS`](https://cmake.org/cmake/help/v3.7/variable/BUILD_SHARED_LIBS.html) | `OFF` | Build library as a DLL
+2b. (**OR** You can open the `SomeUnityProject` directly within Unity to jump straight to the example project/scene)
 
-## Continuous Builds
+3. Open the example scene @ `/Assets/Discord/Example Scene/DiscordExampleScene`.
 
-Why do we have three of these? Three times the fun!
+4. Click on `DiscordCtrl` in the hierarchy and paste your SteamId (if you have one; optionally). You can use this sample Discord app id `333435323239383930393830393337373339` (should already be prefilled). Remember to put your own later.
 
-| CI | badge |
-|----|-------|
-| TravisCI | [![Build status](https://travis-ci.org/discordapp/discord-rpc.svg?branch=master)](https://travis-ci.org/discordapp/discord-rpc)
-| AppVeyor | [![Build status](https://ci.appveyor.com/api/projects/status/qvkoc0w1c4f4b8tj?svg=true)](https://ci.appveyor.com/project/crmarsh/discord-rpc)
-| Buildkite (internal) | [![Build status](https://badge.buildkite.com/e103d79d247f6776605a15246352a04b8fd83d69211b836111.svg)](https://buildkite.com/discord/discord-rpc)
+5. Click PLAY and notice your logs. Click the button and notice the click count goes up. Look at your Discord profile! It's there! You did it~
 
-## Sample: send-presence
+## Now What? Tips!
 
-This is a text adventure "game" that inits/deinits the connection to Discord, and sends a presence update on each command.
+* Now that you're done, you can completely ignore the main `DiscordRpc.cs` file. I recommend you keep the `DiscordController.cs` clean/high-level and make a `DiscordCtrlInfo.cs` class for all your classes.
 
-## Sample: button-clicker
+* Don't forget that the `presence` object is GLOBAL. This means you should RESET IT ( `= new()` ) every time you call UpdatePresence(). I have common/shared stuff in UpdatePresence() then a few helpers before/after. For example, UpdatePresenceLogin(), UpdatePresenceLobby(). I also made a helper class to set all my defaults that I use almost every time to make it easy (or at least have fallbacks).
 
-This is a sample [Unity](https://unity3d.com/) project that wraps a DLL version of the library, and sends presence updates when you click on a button. Run `python build.py unity` in the root directory to build the correct library files and place them in their respective folders.
+* Don't forget you must have a min AND max for the (x of y) to show up.
 
-## Sample: unrealstatus
+* When uploading assets, the names are converted to lowercase. Don't forget! You will! Don't! ;) 
 
-This is a sample [Unreal](https://www.unrealengine.com) project that wraps the DLL version of the library with an Unreal plugin, exposes a blueprint class for interacting with it, and uses that to make a very simple UI. Run `python build.py unreal` in the root directory to build the correct library files and place them in their respective folders.
+* Best practice for me is to use enums to keep track of the names.
 
-## Wrappers and Implementations
+## More Tips!
 
-Below is a table of unofficial, community-developed wrappers for and implementations of Rich Presence in various languages. If you would like to have yours added, please make a pull request adding your repository to the table. The repository should include:
+* Pull request here with more tips as you find them. **Seeking tips on building on Mac/Linux!**
 
-- The code
-- A brief ReadMe of how to use it
-- A working example
+## Included Unity Example Project: button-clicker
 
-###### Rich Presence Wrappers and Implementations
+This is a sample [Unity](https://unity3d.com/) project that wraps a DLL version of the library, and sends presence updates when you click on a button.
 
-| Name | Language |
-|------|----------|
-| [discord-rpc.jar](https://github.com/Vatuu/discord-rpc "Discord-RPC.jar") | Java |
-| [java-discord-rpc](https://github.com/MinnDevelopment/java-discord-rpc) | Java |
-| [Discord-IPC](https://github.com/jagrosh/DiscordIPC) | Java |
-| [Discord Rich Presence](https://npmjs.org/discord-rich-presence) | JavaScript |
-| [drpc4k](https://github.com/Bluexin/drpc4k) | [Kotlin](https://kotlinlang.org/) |
-| [SwordRPC](https://github.com/Azoy/SwordRPC) | [Swift](https://swift.org) |
+## Disclaimer
+
+I just started learning this. There's probably a better way to do this. I've also only confirmed this working on Windows. Linux+Ubuntu are WIP to test when compiled.
+
+However, it's THE only doc on the internet that specifically/simply shows you how to set this up within Unity, so it's better than nothing and hopefully a starting point for you!
+
+## Buy me a beer :)
+
+Found this overwhelmingly useful? Although I can't bear your children, you can check out our (Imperium42 Game Studio) live game, **Throne of Lies: The Online Game of Deceit** @ http://store.steampowered.com/app/595280
+
+## Questions?
+
+I'm on Discord (...of course): https://discord.gg/tol **(Xblade#4242)**
+
+## License
+
+MIT
