@@ -6,7 +6,9 @@ This is a library for interfacing your game with a locally running Discord deskt
 
 ## About This Fork (TL;DR)
 
-* It works **out of the box** in a standard Unity hierarchy. **Quickstart** guide below. This branch is **WIP** (This is my ~2nd day learning this).
+* It works **out of the box** in a standard Unity hierarchy. **Quickstart** guide below. 
+
+* This branch is **WIP** (This is my ~2nd day learning this).
 
 ## About This Fork (Detailed)
 
