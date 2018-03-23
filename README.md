@@ -78,7 +78,7 @@ Found this overwhelmingly useful? Although I can't bear your children, you can a
 
 ## Questions?
 
-I'm on Discord (...of course): https://discord.gg/tol **(Xblade#4242)**
+I'm ~~on Skype~~ Discord (...of course): https://discord.gg/tol **(Xblade#4242)**
 
 ## License
 
