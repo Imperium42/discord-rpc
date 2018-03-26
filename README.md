@@ -12,7 +12,7 @@ This is a library for interfacing your game with a locally running Discord deskt
 
 ## About This Fork (Detailed)
 
-In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, run some CLI, and place the files in an odd manner -- but we’re going to skip all those shenannigans.
+In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, install "CMake" (not mentioned in current docs), run some CLI, and place the files in an odd manner -- but we’re going to skip all those shenannigans.
 
 * This version is simplified from the original, aiming for Unity (specifically on Windows, although it should also be a headstart on Mac, too). 
 
