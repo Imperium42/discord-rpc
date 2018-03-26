@@ -8,8 +8,6 @@ This is a library for interfacing your game with a locally running Discord deskt
 
 * It works **out of the box** in a standard Unity hierarchy. **Quickstart** guide below. 
 
-* This branch is **WIP** (This is my ~2nd day learning this). This is meant to get you started - not to be super maintained.
-
 ## About This Fork (Detailed)
 
 In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, install "CMake" (not mentioned in current docs), run some CLI, and place the files in an odd manner -- but we’re going to skip all those shenannigans.
@@ -22,7 +20,7 @@ In the original documentation, it wants us to build from source, install Python,
 
 * The DLL file is already provided for you and placed correctly. Don't even worry about it unless you error out.
 
-* BuildHelper is modified to be less annoying for paths. **Mac/Linux is WIP!** I could use help :)
+* BuildHelper is modified to be less annoying for paths. DLLs are already placed in the dirs (only `0.25mb` ea).
 
 * IT JUST WORKS!
 
