@@ -10,9 +10,13 @@ This is a library for interfacing your game with a locally running Discord deskt
 
 ## About This Fork (Detailed)
 
-In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, install "CMake" (not mentioned in current docs), run some CLI, and place the files in an odd manner -- but we’re going to skip all those shenannigans.
+In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, install "CMake" (not mentioned in current docs), run some CLI, do some very specific DLL placement with an editor script to place individual ones -- but we’re going to skip all those shenannigans.
 
 * This version is simplified from the original, aiming for Unity (specifically on Windows, although it should also be a headstart on Mac, too). 
+
+* At the expense of only +0.5mb, all the DLL files are placed for you for Windows, Mac & Linux.
+
+* Because DLL files are placed for you, the Editor file is now renamed to `.cs.bak` since it's not needed.
 
 * All bloat and source stuff that we Windows simple folk would never look at has all been removed for simplicity.
 
