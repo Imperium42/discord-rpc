@@ -119,7 +119,7 @@ public class DiscordBuildHelper
         string soPluginsLinux_x86_64 = string.Format("{0}/discord-rpc.so", dirAssetsPlugins_x86_64);    // @ /Assets/Plugins/x86_64/discord-rpc.so
 
         // -----------------------------------------------------------------------------------------------
-        // Src file/dir is actually missing from currentl release. Testing/guessing the file:
+        // Src file/dir is actually missing from current release. Testing/guessing the file:
         // https://github.com/discordapp/discord-rpc/issues/157
         // Now, eventually you can see the original dstDll path tried to rename it to discord-rpc.so ,
         // So (no pun intended), does this mean that this libdiscord-rpc.so is THE file we're looking for?
@@ -128,8 +128,9 @@ public class DiscordBuildHelper
 
         string[] dstDirs = { dirAssetsPlugins, dirAssetsPlugins_x86, dirAssetsPlugins_x86_64 };         // @ /Assets/Plugins , /Assets/Plugins/x86 , /Assets/Plugins/x86_64
         string[] dstDlls = { soPluginsLinux_x86, soPluginsLinux_x86_64 };                               // @ /Assets/Plugins/x86_64/discord-rpc.so , /Assets/Plugins/
-        string[] srcDlls = { soIncludeLinux, dllIncludeWin };                                           // Seems the 64-bit one is actually.. the WINDOWS one??
+        string[] srcDlls = { soIncludeLinux, soIncludeLinux };                                          // Seems the 64-bit one is actually.. the WINDOWS one??
                                                                                                         // Is this right? https://github.com/discordapp/discord-rpc/issues/157
+                                                                                                        // EDIT: I don't think it's right. I think it's the same Linux one for both. No way it's Windows.
 
         UnityEngine.Debug.LogFormat("[Discord] Placing DLLs @ '{0}' && '{1}', srcDlls[0], srcDlls[1]);
 #endif
