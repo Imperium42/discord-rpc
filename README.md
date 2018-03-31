@@ -1,30 +1,31 @@
 # Discord RPC
 
-This is a library for interfacing your game with a locally running Discord desktop client. It's known to work on Windows, macOS, and Linux. 
+This is a library for interfacing your game with a locally running Discord desktop client. It's known to work on Windows, macOS, and Linux.
 
 ![Preview](https://cdn.discordapp.com/attachments/262809788696494080/426409016713805825/unknown.png)
 
 ## About This Fork (TL;DR)
 
-* It works **out of the box** in a standard Unity hierarchy. **Quickstart** guide below. 
+* It works **out of the box** in a standard Unity hierarchy, compiled as: 
+> Windows (32/64)
+> Mac (64/Universal)
+> Linux (64/Universal). 
+
+* **Quickstart** guide below. 
 
 ## About This Fork (Detailed)
 
-In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, install "CMake" (not mentioned in current docs), run some CLI, do some very specific DLL placement with an editor script to place individual ones -- but we’re going to skip all those shenannigans.
+In the original documentation, it wants us to build from source, install Python, pip, pip ‘Click’ app, install "CMake" (not mentioned in current docs), run some CLI, do some very specific DLL placement with an editor script to place individual ones, and do a bunch of different things for different platforms -- but we’re going to skip all those shenannigans.
 
-* This version is simplified from the original, aiming for Unity (specifically on Windows, although it should also be a headstart on Mac, too). 
+* This version is simplified from the original, aiming for use with Unity (Specifically on Windows, but probably works on other OS's)
 
-* At the expense of only +0.5mb, all the DLL files are placed for you for Windows, Mac & Linux.
+* At the expense of only +0.5mb, all the DLL files are placed for you for Windows, Mac & Linux. You can always organize it later.
 
 * Because DLL files are placed for you, the Editor file is now renamed to `.cs.bak` since it's not needed.
 
 * All bloat and source stuff that we Windows simple folk would never look at has all been removed for simplicity.
 
 * The architecture was redesigned to be intuitive to place into a REAL Unity project with better placement.
-
-* The DLL file is already provided for you and placed correctly. Don't even worry about it unless you error out.
-
-* BuildHelper is modified to be less annoying for paths. DLLs are already placed in the dirs (only `0.25mb` ea).
 
 * IT JUST WORKS!
 
@@ -50,19 +51,19 @@ In the original documentation, it wants us to build from source, install Python,
 
 ## Now What? Tips!
 
-* Now that you're done, you can completely ignore the main `DiscordRpc.cs` file. I recommend you keep the `DiscordController.cs` clean/high-level and make a `DiscordCtrlInfo.cs` class for all your classes.
+* Now that you're done, you can completely ignore the main `DiscordRpc.cs` file. I recommend you keep the `DiscordController.cs` clean/high-level and make a new `DiscordCtrlInfo.cs` class for all your classes. You can interact with your DiscordController.cs however way you want (I prefer a singleton).
 
-* Don't forget that the `presence` object is GLOBAL. This means you should RESET IT ( `= new()` ) every time you call UpdatePresence(). I have common/shared stuff in UpdatePresence() then a few helpers before/after. For example, UpdatePresenceLogin(), UpdatePresenceLobby(). I also made a helper class to set all my defaults that I use almost every time to make it easy (or at least have fallbacks).
+* Don't forget that the `presence` object is on the GLOBAL scope. This means you should RESET IT ( `= new()` ) every time you call UpdatePresence(), unless you want the old values to remain. I have common/shared stuff in UpdatePresence() then a few helpers before/after. For example, UpdatePresenceLogin(), UpdatePresenceLobby(). I also made a helper class to set all my defaults that I use almost every time to make it easy (or at least have fallbacks).
 
 * Don't forget you must have a min AND max for the (x of y) to show up.
 
 * When uploading assets, the names are converted to lowercase. Don't forget! You will! Don't! ;) 
 
-* Best practice for me is to use enums to keep track of the names.
+* Best practice is probably to use enums to keep track of the names of the uploaded assets (in lowercase).
 
-## More Tips!
+## Community Tips
 
-* Pull request here with more tips as you find them. **Seeking tips on building on Mac/Linux!**
+* Pull request here with more tips or sample scenes/scripts as you find them.
 
 ## Included Unity Example Project: button-clicker
 
@@ -70,9 +71,7 @@ This is a sample [Unity](https://unity3d.com/) project that wraps a DLL version 
 
 ## Disclaimer
 
-I just started learning this. There's probably a better way to do this. I've also only confirmed this working on Windows. Linux+Ubuntu are WIP to test when compiled. I most likely will not maintain this repo - it's to get you started.
-
-However, it's THE only doc on the internet that specifically/simply shows you how to set this up within Unity, so it's better than nothing and hopefully a starting point for you!
+I just started learning this. There's probably a better way to do this. However, it's (currently) THE first/only doc on the internet that specifically/simply shows you how to set this up within Unity, so it's better than nothing and hopefully a starting point for you!
 
 ## This Forking Changed My Life
 
