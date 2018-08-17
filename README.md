@@ -49,6 +49,11 @@ In the original documentation, it wants us to build from source, install Python,
 
 ![Step 3](https://i.imgur.com/LgmolX7.png)
 
+# Tested
+
+* Tested Working on 5.6 for PC (32-bit, 64-bit), Mac (Universal), and Linux (Universal).
+* I hear only 64-bit Windows (not 32-bit) works in Unity 2018.2: **(Issues link pending)**
+
 ## Now What? Tips!
 
 * Now that you're done, you can completely ignore the main `DiscordRpc.cs` file. I recommend you keep the `DiscordController.cs` clean/high-level and make a new `DiscordCtrlInfo.cs` class for all your classes. You can interact with your DiscordController.cs however way you want (I prefer a singleton).
