@@ -10,6 +10,7 @@ This is a library for interfacing your game with a locally running Discord deskt
 > Windows (32/64)
 > Mac (64/Universal)
 > Linux (64/Universal). 
+> Tested in Unity 5.6 -- Let me know if it works on higher version(s)!
 
 * **Quickstart** guide below. 
 
@@ -81,7 +82,7 @@ This is a sample [Unity](https://unity3d.com/) project that wraps a DLL version 
 
 ## Disclaimer
 
-I just started learning this. There's probably a better way to do this. However, it's (currently) THE first/only doc on the internet that specifically/simply shows you how to set this up within Unity, so it's better than nothing and hopefully a starting point for you!
+I just started learning this. There's probably a better way to do this. However, it's (currently) THE first/only doc on the internet that specifically/simply shows you how to set this up within Unity that works out of the box, so it's better than nothing and hopefully a starting point for you!
 
 ## This Forking Changed My Life
 
