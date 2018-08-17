@@ -61,6 +61,11 @@ In the original documentation, it wants us to build from source, install Python,
 
 * Best practice is probably to use enums to keep track of the names of the uploaded assets (in lowercase).
 
+## Updating
+
+Grab the new DLL's from here:
+https://ci.appveyor.com/project/crmarsh/discord-rpc/build/artifacts
+
 ## Community Tips
 
 * Pull request here with more tips or sample scenes/scripts as you find them.
