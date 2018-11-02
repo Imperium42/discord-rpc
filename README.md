@@ -4,6 +4,9 @@ This is a library for interfacing your game with a locally running Discord deskt
 
 ![Preview](https://cdn.discordapp.com/attachments/262809788696494080/426409016713805825/unknown.png)
 
+## ⚠️ Does NOT work with il2cpp builds
+Follow this thread @ https://github.com/discordapp/discord-rpc/issues/243
+
 ## About This Fork (TL;DR)
 
 * It works **out of the box** in a standard Unity hierarchy, compiled as: 
