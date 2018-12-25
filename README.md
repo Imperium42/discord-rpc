@@ -7,6 +7,15 @@ This is a library for interfacing your game with a locally running Discord deskt
 ## ⚠️ Does NOT work with il2cpp builds
 Follow this thread @ https://github.com/discordapp/discord-rpc/issues/243
 
+12/25/2018 EDIT: Seems like we figured it out! While source has IL2CPP implemented, you may have to wait a bit for release (release = link in section below).
+
+## ⚠️ 12/25/2018: This repo is DEPRECATED!
+This repo was great for getting started back when there were no "release" builds from `discord-rpc`, where building from source would involve Python, pip, make, and a bunch of other weird things that you don't usually use on Windows.
+
+However, now, it's pretty streamlined. Also, the new versions provide Discord info at OnReady(), so update your privacy policies and you literally have a pre-linked Discord account! Neat!
+
+Here's a lazy link to their "Releases" section! They recently added IL2CPP support, but it MAY not be @ Release yet: You probably still have to build from source (or WAIT - it'll be there soon): https://github.com/discordapp/discord-rpc/releases
+
 ## About This Fork (TL;DR)
 
 * It works **out of the box** in a standard Unity hierarchy, compiled as: 
